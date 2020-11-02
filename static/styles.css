@@ -1,0 +1,98 @@
+* {
+    font: 100% Helvetica,sans-serif;
+}
+
+.navbar {
+    font-weight:bold
+    width:100%
+}
+
+.card-body {
+    border-width:5px;
+    border-color:black;
+    background-color:black;
+    font:white
+}
+
+.card-title {
+    color:white
+}
+
+.card-text {
+    color:white;
+    font:76% Helvetica,sans-serif;
+    text-align:center;
+}
+
+a {
+    color:white;
+    font:100% Helvetica,sans-serif;
+}
+
+h1 {
+    background-color:black;
+    color:white;
+    text-shadow: 2px 2px grey;
+    text-decoration: underline;
+    padding: 8px;
+}
+
+h6 {
+    background-color:black;
+    padding: 4px;
+    font:76% Helvetica,sans-serif;
+    color: white;
+    margin-top: 4px
+}
+
+
+/*
+html,body {
+    margin:0;
+    padding:0;
+    text-align:center;
+    background-color:black
+}
+
+p {
+    margin:0 10px 10px;
+    line-height:1.4
+}
+a {
+    padding:5px;
+    text-decoration:none;
+    color:#000000;
+}
+.navbar {
+    font-weight:bold;
+    float:left;
+    width:100%
+}
+
+}
+h1 {
+    height:80px;
+    line-height:80px;
+    margin:0;
+    padding-left:10px;
+}
+.container {
+    text-align:left;
+    width:700px;
+    margin:0 auto
+}
+ul {
+    margin:15px 0;
+    padding:0;
+    list-style-type:none;
+}
+li {
+    margin-bottom:5px;
+}
+.card-body {
+    property: value;
+}
+
+.card-text {
+}
+*/

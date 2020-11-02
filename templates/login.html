@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Title</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href={{ url_for("static", filename="styles.css") }}>
+
+
+  </head>
+
+  {% extends "base.html" %}
+  {% block content %}
+
+
+  <body>
+    <div class = "page-header"  class="display-1">
+      <h1 class="text-lg-center" >Login</h1>
+    </div>
+
+      {% import "bootstrap/wtf.html" as wtf %}
+      <div class="container">
+        <form  method="post">
+          {{ form.hidden_tag() }}
+
+          <br>
+
+          <div class="form-group">
+            <label for="Email">Email Address</label>
+            <input type="email" class="form-control" placeholder="Email Address" {{ form.email() }}
+          </div>
+
+          <br>
+
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" placeholder="Password" {{ form.password() }}
+            </div>
+
+          <br>
+
+
+          <button class="btn btn-secondary" "{{ form.submit_button() }} Login </button>
+        </form>
+
+        <br>
+
+      <h6> Do you not have already an accout? Register <a href="/register">here</a>! </h6>
+
+  {% endblock %}
+
+  <link rel="stylesheet" href={{ url_for('static', filename='styles.css') }}>
+
+  </body>

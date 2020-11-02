@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href={{ url_for("static", filename="styles.css") }}>
+  </head>
+<body>
+    {% extends "base.html" %}
+    {% block content %}
+
+
+    <br>
+      <div class = "page-header"  class="display-1">
+        <h1 class="text-lg-center" >Feed</h1>
+      </div>
+    <br>
+
+
+      <div class="row justify-content-center">
+
+        {% for index, row in new_df.iterrows() %}
+            <div class="card" >
+              <div class="card-body" style="width: 18rem; margin: 20px; margin-bottom: 20px">
+                <h5 class="card-title" label="Post No.:" > Post No.: {{ index+1 }}</h5>
+                <p class="card-text" >Content: {{ row['post_content'] }} </p>
+                <p class="card-text" label="Length:"> Length: {{ row['post_length'] }}</p>
+                <p class="card-text" label="Time:">Post Time: {{ row['post_time'] }}</p>
+                <p class="card-text" label="User ID:">User ID: {{ row['user_id'] }}</p>
+                <a href={{row['user_handle']}}>Link</a>
+              </div>
+            <br>
+          </div>
+        {% endfor %}
+      </div>
+    {% endblock %}
+  </body>
+</html>

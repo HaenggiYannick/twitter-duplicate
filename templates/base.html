@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href={{ url_for("static", filename="styles.css") }}>
+  </head>
+
+      <body>
+
+        <div class="container">
+          {% if current_user.is_authenticated %}
+            <header class="navbar-expand-lg" >
+                <div class="container">
+                  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                  <a class="navbar-brand" href="/homepage">
+                      <img src="static/logo.jpg" width="90" height="45" alt="logo" loading="lazy">
+                      White Water
+                  </a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                  </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <div class="row justify-content-center">
+                        <ul class="navbar-nav justify-content-center mr-auto">
+                          <li class="nav-item">
+                            <a class="nav-link" href="/homepage">Homepage</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="/upload"> Add a Post</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="/profile/{{ current_user.user_handle }}" >Profile</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="/logout">Logout</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </nav>
+                </div>
+              </div>
+            </header>
+          <br>
+          {% else %}
+            <header class="navbar-expand-lg" >
+                <div class="container">
+                  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                  <a class="navbar-brand" href="/login">
+                      <img src="static/logo.jpg" width="90" height="45" alt="logo" loading="lazy">
+                      White Water
+                  </a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                  </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                          <a class="nav-link" href="/login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/register">Register</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
+                </div>
+            </header>
+          <br>
+          {% endif %}
+    </body>
+  </html>
+
+  {% block content %}
+
+  {% endblock %}

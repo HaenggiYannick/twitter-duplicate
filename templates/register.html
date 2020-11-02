@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Profile</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href={{ url_for("static", filename="styles.css") }}>
+
+
+  </head>
+
+  {% extends "base.html" %}
+  {% block content %}
+
+  <div class = "page-header"  class="display-1">
+    <h1 class="text-lg-center" >Registration</h1>
+  </div>
+
+    {% import "bootstrap/wtf.html" as wtf %}
+
+    <div class="container">
+        <form  method="post">
+          {{ form.hidden_tag() }}
+
+          <div class="form-group">
+            <label for="first_name">First Name</label>
+            <input type="first_name" class="form-control" placeholder="First Name" {{ form.first_name() }}
+            <small id="emailHelp" class="form-text text-muted">Very exticed that you want to join this platform!</small>
+          </div>
+
+
+          <br>
+            <div class="form-group">
+            <label for="last_name">Last Name</label>
+            <input type="last_name" class="form-control" placeholder="Last Name" {{ form.last_name() }}
+            </div>
+
+          <br>
+
+
+          <div class="form-group">
+            <label for="user_handle">Username</label>
+            <input type="user_handle" class="form-control" placeholder="Be creative!" {{ form.user_handle() }}
+          </div>
+
+          <br>
+
+
+          <div class="form-group">
+            <label for="Email">Email Address</label>
+            <input type="email" class="form-control" placeholder="Enter your Email Address" {{ form.email() }}
+            <small id="emailHelp" class="form-text text-muted">You must enter an actual e-mail address to register.</small>
+          </div>
+
+
+          <br>
+
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" placeholder="Enter a safe Password" {{ form.password() }}
+            </div>
+
+          <br>
+
+            <div class="form-group">
+              <label for="description">Description</label>
+              <input type="description" class="form-control" placeholder="Tell us more about you!" {{ form.description() }}
+
+            </div>
+          <br>
+
+          <button class="btn btn-dark" "{ form.submit_button() }}"> Submit </button>
+
+
+
+
+          <br>
+          <br>
+
+        <h6> Do you have already an accout? Sign In <a href="/login">here</a> </h6>
+
+
+        </form>
+      </div>
+      {% endblock %}
+
+
+</body>
