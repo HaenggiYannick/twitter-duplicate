@@ -16,3 +16,6 @@ You have to run this file in your terminal with the python main.py command
 * saves and stores the data
 
 [markdown cheatsheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
+
+
+![git branches](./static/local_directory)
