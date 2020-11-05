@@ -18,4 +18,4 @@ You have to run this file in your terminal with the python main.py command
 [markdown cheatsheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
 
 
-![git branches](./static/local_directory)
+![git branches](/static/local_directory)
